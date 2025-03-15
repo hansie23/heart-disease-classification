@@ -69,14 +69,10 @@ input_data = pd.DataFrame({
 # Make prediction
 if st.button('Predict'):
     prediction = clf.predict(input_data)
-    probability = clf.predict_proba(input_data)
     
     if prediction[0] == 0:
         st.success('The model predicts: No Heart Disease')
     else:
         st.error('The model predicts: Heart Disease')
-    
-    st.write(f'Probability of No Heart Disease: {probability[0][0]:.2f}')
-    st.write(f'Probability of Heart Disease: {probability[0][1]:.2f}')
     
 st.markdown('**Note:** This prediction is based on a machine learning model and should not be considered as a professional medical advice.')
